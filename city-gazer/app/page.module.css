@@ -1,0 +1,12 @@
+.landingContainer {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.landingImage {
+  z-index: -1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
