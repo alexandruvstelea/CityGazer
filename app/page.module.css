@@ -2,6 +2,7 @@
   text-align: center;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .landingImage {
@@ -9,4 +10,10 @@
   position: fixed;
   height: 100%;
   width: 100%;
+}
+
+.title{
+  margin-top: 32px;
+  margin-bottom: 0px;
+  font-size: 64px;
 }

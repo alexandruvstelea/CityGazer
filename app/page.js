@@ -1,3 +1,4 @@
+import AnimatedButton from "./components/AnimatedButton";
 import styles from "./page.module.css";
 import Image from "next/image";
 
@@ -13,6 +14,7 @@ export default function LandingPage() {
           quality={100}
         />
         <h1 className={styles.title}>City Gazer</h1>
+        <AnimatedButton text="Start Gazing" />
       </div>
     </>
   );
