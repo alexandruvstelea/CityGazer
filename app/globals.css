@@ -5,14 +5,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-.footer {
-  background: black;
-  color: white;
-  padding: 5px;
-  text-align: center;
-  font-weight: bolder;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-}
