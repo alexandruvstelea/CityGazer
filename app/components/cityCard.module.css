@@ -1,5 +1,5 @@
 .cityCard {
-  width: 248px;
+  width: 256px;
   border: 2px solid black;
   background-color: white;
   box-sizing: border-box;
@@ -12,7 +12,7 @@
 
 .cardImage {
   width: 100%;
-  height: 200px;
+  height: 178px;
   position: relative;
 }
 
