@@ -13,6 +13,7 @@ function CityCard({ city, country, imageUrl }) {
           fill={true}
           quality={100}
           priority={true}
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 800px"
         />
       </div>
       <div className={styles.cityInfo}>

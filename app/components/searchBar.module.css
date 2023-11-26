@@ -8,6 +8,7 @@
   box-sizing: border-box;
   transition: transform 0.2s ease-in-out;
   font-family: "Montserrat";
+  font-size: 24px;
 }
 
 .searchBar.focused {
