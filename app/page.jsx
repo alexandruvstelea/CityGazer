@@ -15,7 +15,7 @@ export default function LandingPage() {
           priority={true}
         />
         <h1 className={styles.title}>City Gazer</h1>
-        <AnimatedButton text="Start Gazing" href="/home"/>
+        <AnimatedButton text="Start Gazing" href="/home" />
       </div>
     </>
   );
