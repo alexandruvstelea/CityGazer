@@ -21,6 +21,9 @@ City Gazer is a web application built with Next.js and React, allowing users to 
 1. **Landing Page**:
    ![City Search](./screenshots/landing_page.png)
 
+2. **Home Page**:
+   ![City Search](./screenshots/home_page.png)
+
 ## Setup Instructions
 
 To run City Gazer locally, follow these steps:
