@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./cityCard.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 function CityCard({ city, country, imageUrl }) {
   return (
@@ -19,7 +20,9 @@ function CityCard({ city, country, imageUrl }) {
       <div className={styles.cityInfo}>
         <h2>{city}</h2>
         <p>{country}</p>
-        <button className={styles.viewMoreBtn}>Gaze city</button>
+        <Link href={"/view/" + city.toLowerCase()}>
+          <button className={styles.viewMoreBtn}>Gaze city</button>
+        </Link>
       </div>
     </div>
   );
