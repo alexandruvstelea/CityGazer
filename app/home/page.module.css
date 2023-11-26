@@ -1,7 +1,7 @@
 .searchSection {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .cardSection {
@@ -10,6 +10,19 @@
   flex-wrap: wrap;
   gap: 48px;
   overflow-y: auto;
-  margin-top: 24px;
+  margin-top: 16px;
   width: 100%;
+  overflow-y: auto;
+  max-height: 75vh;
+}
+
+.header{
+  font-family: "Montserrat";
+  font-weight: bolder;
+  margin-left: 5%;
+}
+
+.header h1{
+  margin-bottom: 0px;
+  margin-top: 8px;
 }
