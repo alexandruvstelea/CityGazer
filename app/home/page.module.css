@@ -1,0 +1,15 @@
+.searchSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cardSection {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  overflow-y: auto;
+  margin-top: 24px;
+  width: 100%;
+}
