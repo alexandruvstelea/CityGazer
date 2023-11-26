@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./animatedButton.module.css";
 
-export default function AnimatedButton({ text, href}) {
+export default function AnimatedButton({ text, href }) {
   return (
     <>
       <a className={styles.buttonLanding} href={href}>
