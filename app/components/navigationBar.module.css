@@ -8,9 +8,11 @@
 }
 
 .navbarTitle {
+  display: flex;
+  align-items: center;
   text-align: center;
-  flex-grow: 1;
   font-size: 24px;
+  gap: 8px;
 }
 
 .navbarTitle h1 {
@@ -18,16 +20,19 @@
   margin-bottom: 8px;
 }
 
-.navbarLeft,
+.navbarLeft {
+  width: 10%;
+}
+
 .navbarRight {
   width: 10%;
 }
 
 .navbarRight {
-  margin-right: 32px;
+  margin-right: 16px;
 }
 .navbarLeft {
-  margin-left: 32px;
+  margin-left: 16px;
 }
 
 .homeButton,
