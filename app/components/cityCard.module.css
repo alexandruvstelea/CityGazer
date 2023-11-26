@@ -1,0 +1,49 @@
+.cityCard {
+  width: 248px;
+  border: 2px solid black;
+  background-color: white;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  font-family: "Montserrat";
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.cityImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cityInfo h2,
+.cityInfo p {
+  margin: 8px;
+}
+
+.viewMoreBtn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border: solid black 1px;
+  font-family: "Montserrat";
+}
+
+.cityCard:hover {
+  transform: scale(1.01);
+}
+
+.viewMoreBtn:hover {
+  background-color: #d8d7d5;
+  color: black;
+}
