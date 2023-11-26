@@ -16,13 +16,13 @@
   max-height: 75vh;
 }
 
-.header{
+.header {
   font-family: "Montserrat";
   font-weight: bolder;
-  margin-left: 5%;
+  margin-left: 4.5%;
 }
 
-.header h1{
+.header h1 {
   margin-bottom: 0px;
   margin-top: 8px;
 }
