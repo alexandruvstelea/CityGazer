@@ -47,3 +47,9 @@
   background-color: #d8d7d5;
   color: black;
 }
+
+@media screen and (max-width: 580px) {
+  .cityCard {
+    width: 296px;
+  }
+}

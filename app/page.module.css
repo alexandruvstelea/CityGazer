@@ -10,10 +10,31 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .title {
   margin-top: 32px;
   margin-bottom: 0px;
   font-size: 64px;
+}
+
+.buttonContainer {
+  margin-top: 128px;
+}
+
+@media (max-height: 768px) {
+  .buttonContainer {
+    margin-top: 64px;
+  }
+}
+
+@media (max-height: 572px) {
+  .buttonContainer {
+    margin-top: 4px;
+  }
+
+  .title {
+    margin-top: 4px;
+  }
 }

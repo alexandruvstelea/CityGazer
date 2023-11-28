@@ -12,8 +12,16 @@ export default function NavigationBar() {
         </Link>
       </div>
       <div className={styles.navbarTitle}>
-        <Image src="/logo.png" alt="Logo" width={50} height={50} />
-        <h1>City Gazer </h1>
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={50}
+            height={50}
+            className={styles.logoImage}
+          />
+          <h1>City Gazer </h1>
+        </Link>
       </div>
       <div className={styles.navbarRight}>
         <Link href="/contact">

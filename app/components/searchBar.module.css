@@ -22,3 +22,9 @@
   flex-grow: 1;
   margin-left: 10px;
 }
+
+@media screen and (max-width: 580px) {
+  .searchBar {
+    width: 300px;
+  }
+}

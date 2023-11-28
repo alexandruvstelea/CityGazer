@@ -6,7 +6,6 @@
   cursor: pointer;
   display: inline-block;
   letter-spacing: 0.05em;
-  margin-top: 128px;
   outline: none;
   overflow: visible;
   padding: 1.25em 2em;
@@ -29,7 +28,7 @@
   position: absolute;
   transform: translateY(-50%);
   transform-origin: center;
-  transition: background 0.3s linear, width 0.3s linear;
+  transition: 0.3s linear, width 0.3s linear;
 }
 
 .buttonLanding .text {
