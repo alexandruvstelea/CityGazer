@@ -22,9 +22,30 @@
   object-fit: cover;
 }
 
-.cityInfo h2,
+.cityInfo {
+  padding: 8px;
+  height: 128px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cityInfo h2 {
+  font-size: 1.5em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .cityInfo p {
-  margin: 8px;
+  font-size: 1em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .viewMoreBtn {
