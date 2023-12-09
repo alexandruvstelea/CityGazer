@@ -3,7 +3,7 @@ import styles from "./cityCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-function CityCard({ city, country, imageUrl }) {
+function CityCard({ city, region, imageUrl, fullName }) {
   return (
     <div className={styles.cityCard}>
       <div className={styles.cardImage}>
@@ -19,7 +19,7 @@ function CityCard({ city, country, imageUrl }) {
       </div>
       <div className={styles.cityInfo}>
         <h2>{city}</h2>
-        <p>{country}</p>
+        <p>{region}</p>
         <Link href={"/view/" + city.toLowerCase()}>
           <button className={styles.viewMoreBtn}>Gaze city</button>
         </Link>
