@@ -3,12 +3,18 @@ import styles from "./navigationBar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function NavigationBar() {
+function NavigationBar({ onHomeClick }) {
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarLeft}>
         <Link href="/home">
-          <button className={styles.homeButton}>Home</button>
+          {onHomeClick ? (
+            <button onClick={() => onHomeClick()} className={styles.homeButton}>
+              Home
+            </button>
+          ) : (
+            <button className={styles.homeButton}>Home</button>
+          )}
         </Link>
       </div>
       <div className={styles.navbarTitle}>
@@ -31,3 +37,5 @@ export default function NavigationBar() {
     </div>
   );
 }
+
+export default NavigationBar;
