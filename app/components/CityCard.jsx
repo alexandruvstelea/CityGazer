@@ -3,14 +3,14 @@ import styles from "./cityCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-function CityCard({ city, region, imageUrl, fullName }) {
+function cityCard({ cityName, region, imageUrl, geoId }) {
   return (
     <div className={styles.cityCard}>
       <div className={styles.cardImage}>
         <Image
           className={styles.cityImage}
           src={imageUrl}
-          alt={city}
+          alt={cityName}
           fill={true}
           quality={100}
           priority={true}
@@ -18,9 +18,9 @@ function CityCard({ city, region, imageUrl, fullName }) {
         />
       </div>
       <div className={styles.cityInfo}>
-        <h2>{city}</h2>
+        <h2>{cityName}</h2>
         <p>{region}</p>
-        <Link href={"/view/" + city.toLowerCase()}>
+        <Link href={`/view?geoId=${geoId}`}>
           <button className={styles.viewMoreBtn}>Gaze city</button>
         </Link>
       </div>
@@ -28,4 +28,4 @@ function CityCard({ city, region, imageUrl, fullName }) {
   );
 }
 
-export default CityCard;
+export default cityCard;
