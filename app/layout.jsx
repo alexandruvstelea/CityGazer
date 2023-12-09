@@ -3,7 +3,6 @@ import Footer from "./components/Footer.jsx";
 import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
-import Image from "next/image";
 
 export const metadata = {
   title: "City Gazer - By Alexandru Stelea",
