@@ -5,7 +5,13 @@ import NavigationBar from "../components/NavigationBar";
 import CityCard from "../components/CityCard";
 import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
-import cities from "./startCities";
+import defaultCities from "./defaultCities";
+import LoadingSpinner from "../components/loadingSpinner";
+
+function extractGeoId(url) {
+  const match = url.match(/geonameid:(\d+)/);
+  if (match && match.length > 1) return match[1];
+}
 
 async function formatCityData(data, searchTerm) {
   const formattedCities = data
@@ -18,6 +24,8 @@ async function formatCityData(data, searchTerm) {
         }`
           .trim()
           .replace(/ *\([^)]*\) */g, "");
+        const geoUrl = city["_links"]["city:item"]["href"];
+        const geoId = extractGeoId(geoUrl);
         if (
           cityName
             .toLowerCase()
@@ -29,6 +37,7 @@ async function formatCityData(data, searchTerm) {
             name: cityName,
             region: regionName,
             fullName: city.matching_full_name,
+            geoId: geoId,
           };
       }
       return null;
@@ -46,7 +55,7 @@ async function addCityImages(data) {
           .replace(/\s+/g, "-")}/images/`
       );
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("An error has occured while fetching data.");
       }
       const data = await response.json();
       city.imageUrl = data["photos"][0]["image"]["web"];
@@ -63,16 +72,17 @@ async function addCityImages(data) {
 }
 
 function HomePage() {
-  const [cityData, setCityData] = useState(cities);
+  const [cityData, setCityData] = useState(defaultCities);
+  const [loading, setLoading] = useState(false);
 
   const fetchCityData = async (searchTerm) => {
+    setLoading(true);
     const resultsLimit = 24;
     const apiUrl = `https://api.teleport.org/api/cities/?search=${searchTerm.toLowerCase()}&limit=${resultsLimit}`;
-    console.log(apiUrl);
     try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("An error has occured while fetching data.");
       }
       const data = await response.json();
       const formatedData = await formatCityData(
@@ -80,32 +90,42 @@ function HomePage() {
         searchTerm
       );
       const fullData = await addCityImages(formatedData);
+      setLoading(false);
       setCityData(fullData);
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
+      setLoading(false);
     }
+  };
+
+  const displayDefaultCities = () => {
+    setCityData(defaultCities);
   };
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar onHomeClick={displayDefaultCities} />
       <div className={styles.searchSection}>
         <SearchBar onSearch={fetchCityData} />
       </div>
       <div className={styles.header}>
         <h1>Explore these Cities</h1>
       </div>
-      <div className={styles.cardSection}>
-        {cityData.map((city, index) => (
-          <CityCard
-            key={index}
-            city={city.name}
-            region={city.region}
-            imageUrl={city.imageUrl}
-            fullName={city.fullName}
-          />
-        ))}
-      </div>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <div className={styles.cardSection}>
+          {cityData.map((city, index) => (
+            <CityCard
+              key={index}
+              cityName={city.name}
+              region={city.region}
+              imageUrl={city.imageUrl}
+              geoId={city.geoId}
+            />
+          ))}
+        </div>
+      )}
       <Footer text="Developed By Alexandru Stelea" />
     </>
   );
