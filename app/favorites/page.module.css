@@ -1,0 +1,29 @@
+.cardSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 32px;
+  padding: 16px;
+  max-width: 100%;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 32px 0px;
+  font-size: 48px;
+}
+
+.noFavorites {
+  text-align: center;
+  font-size: 32px;
+  width: 100%;
+  margin: 0;
+  padding: 20px 0;
+}
