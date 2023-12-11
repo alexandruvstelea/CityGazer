@@ -30,8 +30,8 @@ function NavigationBar({ onHomeClick }) {
         </Link>
       </div>
       <div className={styles.navbarRight}>
-        <Link href="/contact">
-          <button className={styles.contactButton}>Contact</button>
+        <Link href="/favorites">
+          <button className={styles.contactButton}>Favorites</button>
         </Link>
       </div>
     </div>
