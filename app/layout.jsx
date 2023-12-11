@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import Footer from "./components/Footer.jsx";
 import "./globals.css";
+import { CityProvider } from "./components/CityContext.js";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -13,10 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <>
       <html lang="en">
-        <body className={montserrat.className}>
-          {children}
-          <Footer text="Developed by Alexandru Stelea" />
-        </body>
+        <CityProvider>
+          <body className={montserrat.className}>
+            {children}
+            <Footer text="Developed by Alexandru Stelea" />
+          </body>
+        </CityProvider>
       </html>
     </>
   );
