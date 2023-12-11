@@ -18,7 +18,6 @@ function SearchBar({ onSearch }) {
 
   useEffect(() => {
     if (searchParams.get("search")) {
-      // !console.log("useEffect triggered", searchParams.get("search"));
       setSearchTerm(searchParams.get("search"));
       onSearch(searchParams.get("search"));
     } else {
