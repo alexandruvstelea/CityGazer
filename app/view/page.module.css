@@ -6,10 +6,10 @@
   font-weight: bolder;
   text-align: center;
   justify-content: center;
+  margin: 52px 0px 0px 0px;
 }
 
 .header h1 {
-  margin: 32px 0px;
   font-size: 64px;
 }
 
