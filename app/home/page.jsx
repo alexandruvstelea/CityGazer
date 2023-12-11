@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import NavigationBar from "../components/NavigationBar";
 import CityCard from "../components/CityCard";
-import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 import defaultCities from "./defaultCities";
 import LoadingSpinner from "../components/loadingSpinner";
@@ -19,9 +18,8 @@ async function formatCityData(data, searchTerm) {
       const parts = city.matching_full_name.split(",");
       if (parts.length >= 2) {
         const cityName = parts[0].trim();
-        const regionName = `${parts[parts.length - 2]},${
-          parts[parts.length - 1]
-        }`
+        const region = `${parts[parts.length - 2]}`;
+        const country = `${parts[parts.length - 1]}`
           .trim()
           .replace(/ *\([^)]*\) */g, "");
         const geoUrl = city["_links"]["city:item"]["href"];
@@ -35,7 +33,8 @@ async function formatCityData(data, searchTerm) {
         )
           return {
             name: cityName,
-            region: regionName,
+            region: region,
+            country: country,
             fullName: city.matching_full_name,
             geoId: geoId,
           };
@@ -59,7 +58,6 @@ async function addCityImages(data) {
       }
       const data = await response.json();
       city.imageUrl = data["photos"][0]["image"]["web"];
-      console.log(city.imageUrl);
       return city;
     } catch (error) {
       let randomNumber = Math.floor(Math.random() * 4 + 1);
@@ -118,15 +116,15 @@ function HomePage() {
           {cityData.map((city, index) => (
             <CityCard
               key={index}
-              cityName={city.name}
+              name={city.name}
               region={city.region}
+              country={city.country}
               imageUrl={city.imageUrl}
               geoId={city.geoId}
             />
           ))}
         </div>
       )}
-      <Footer text="Developed By Alexandru Stelea" />
     </>
   );
 }
