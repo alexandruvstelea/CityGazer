@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./cityCard.module.css";
 import Image from "next/image";
-import Link from "next/link";
+import { CityContext } from "./CityContext";
+import { useRouter } from "next/navigation";
 
-function cityCard({ cityName, region, imageUrl, geoId }) {
+function CityCard({ name, region, country, imageUrl, geoId }) {
+  const { setSelectedCity } = useContext(CityContext);
+  const router = useRouter();
+  const handleViewCity = () => {
+    setSelectedCity({
+      name: name,
+      region: region,
+      country: country,
+      imageUrl: imageUrl,
+      geoId: geoId,
+    });
+    router.push("/view");
+  };
   return (
     <div className={styles.cityCard}>
       <div className={styles.cardImage}>
         <Image
           className={styles.cityImage}
           src={imageUrl}
-          alt={cityName}
+          alt={name}
           fill={true}
           quality={100}
           priority={true}
@@ -18,14 +31,16 @@ function cityCard({ cityName, region, imageUrl, geoId }) {
         />
       </div>
       <div className={styles.cityInfo}>
-        <h2>{cityName}</h2>
-        <p>{region}</p>
-        <Link href={`/view?geoId=${geoId}`}>
-          <button className={styles.viewMoreBtn}>Gaze city</button>
-        </Link>
+        <h2>{name}</h2>
+        <p>
+          {region}, {country}
+        </p>
+        <button onClick={handleViewCity} className={styles.viewMoreBtn}>
+          Gaze city
+        </button>
       </div>
     </div>
   );
 }
 
-export default cityCard;
+export default CityCard;
