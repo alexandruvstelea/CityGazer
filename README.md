@@ -2,19 +2,17 @@
 
 ## Overview
 
-City Gazer is a web application built with Next.js and React, allowing users to explore various cities and obtain detailed information including location, weather updates, photos, and more. Users can also save their favorite cities for later reference. MongoDB is used as the database for data storage.
+City Gazer is a web application built with Next.js and React, allowing users to explore various cities and obtain detailed information including location, weather updates, photos, and more. Users can also save their favorite cities for later reference.
 
 ## Features
 
-- **City Search**: Search and retrieve detailed information about cities.
+- **City Search**: Search and retrieve information about cities.
 - **Weather Updates**: Real-time weather information for searched cities.
-- **Image Gallery**: Access a collection of photos showcasing the cities.
 - **Favorite Cities**: Ability to mark and save preferred cities for easy access.
 
 ## Technical Stack
 
 - **Frontend**: Next.js, React, JSX, CSS
-- **Database**: MongoDB
 
 ## Screenshots
 
@@ -23,6 +21,10 @@ City Gazer is a web application built with Next.js and React, allowing users to 
 
 2. **Home Page**:
    ![Home Page](./screenshots/home_page.png)
+
+3. **Gaze City Page**:
+   ![Gaze City Page](./screenshots/city_gaze_page_1.png)
+   ![Gaze City Page](./screenshots/city_gaze_page_2.png)
 
 ## Setup Instructions
 
